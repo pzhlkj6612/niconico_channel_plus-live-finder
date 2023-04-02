@@ -28,7 +28,9 @@ echo '| - |:- |:-:|:-:|';
     domain="$(jq --raw-output '.domain' <<<"${channel_info}")";
 
     live_page_info="$(
-      curl -sS "https://nfc-api.nicochannel.jp/fc/fanclub_sites/${fanclub_site_id}/live_pages?page=1&live_type=2&per_page=1" | \
+      curl -sS \
+        -H 'fc_use_device: null' \
+        "https://nfc-api.nicochannel.jp/fc/fanclub_sites/${fanclub_site_id}/live_pages?page=1&live_type=2&per_page=1" | \
       jq '.data' \
     )";
 
@@ -39,7 +41,9 @@ echo '| - |:- |:-:|:-:|';
         content_code="$(jq --raw-output '.[0].content_code' <<<"${live_list}")";
 
         live_info="$(
-          curl -sS "https://nfc-api.nicochannel.jp/fc/video_pages/${content_code}" | \
+          curl -sS \
+            -H 'fc_use_device: null' \
+            "https://nfc-api.nicochannel.jp/fc/video_pages/${content_code}" | \
           jq '.data.video_page' \
         )";
 
