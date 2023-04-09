@@ -64,7 +64,7 @@ while read -r channel_info; do
 
       thumbnail_url="$(jq --raw-output '.thumbnail_url' <<<"${live_info}")";
       if [[ "${thumbnail_url}" != 'null' ]]; then
-        thumbnail_element="<img alt=\"${title}\" src=\"${thumbnail_url}\" height=\"128px\">"
+        thumbnail_element="<img alt=\"${title}\" src=\"${thumbnail_url}\" height=\"64px\">"
       else
         thumbnail_element='<i>no thumbnail</i>'
       fi;
