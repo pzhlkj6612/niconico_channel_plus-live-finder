@@ -33,7 +33,7 @@ jobs:
           1>'${{ env.generated_markdown_file_name }}' \
             bash \
               ./the_script.sh \
-                '604800' \
+                '432000' \
                 '${{ env.downloaded_json_file_name }}'
 
       - name: Read ${{ env.generated_markdown_file_name }}
