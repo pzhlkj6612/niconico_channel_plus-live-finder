@@ -12,7 +12,7 @@ sort --version >/dev/stderr
 
 
 offset_second="$1"
-channel_list_json="$2"
+channel_list_json="$2"  # https://nfc-api.nicochannel.jp/fc/content_providers/channels
 
 file "${channel_list_json}" >/dev/stderr
 
