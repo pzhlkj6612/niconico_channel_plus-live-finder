@@ -4,6 +4,7 @@
 set -e
 set -o pipefail
 set -u
+set -x
 
 
 curl --version >/dev/stderr
@@ -73,7 +74,7 @@ while read -r channel_info; do
         if [[ ${live_scheduled_start_at_second} -le ${limit_second} ]]; then
           key="${live_scheduled_start_at_second} ${content_code}"
           value="$(
-            cat <<-TABLE_ROW
+            cat <<TABLE_ROW
 						  <tr>
 						    <td>${live_scheduled_start_at}</td>
 						    <td>
