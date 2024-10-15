@@ -87,7 +87,7 @@ while read -r channel_info; do
 						    <td>${video_allow_dvr_flg}</td>
 						    <td>${video_convert_to_vod_flg}</td>
 						  </tr>
-						TABLE_ROW
+TABLE_ROW
           )"
           live_timestamp_code_row_map["${key}"]="${value}"
 
