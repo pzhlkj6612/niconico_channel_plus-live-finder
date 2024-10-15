@@ -75,18 +75,18 @@ while read -r channel_info; do
           key="${live_scheduled_start_at_second} ${content_code}"
           value="$(
             cat <<TABLE_ROW
-              <tr>
-                <td>${live_scheduled_start_at}</td>
-                <td>
-                  <a href="${domain}/live/${content_code}">${content_code}</a>
-                  <br>
-                  ${thumbnail_element}
-                  <br>
-                  ${title}
-                </td>
-                <td>${video_allow_dvr_flg}</td>
-                <td>${video_convert_to_vod_flg}</td>
-              </tr>
+<tr>
+  <td>${live_scheduled_start_at}</td>
+  <td>
+    <a href="${domain}/live/${content_code}">${content_code}</a>
+    <br>
+    ${thumbnail_element}
+    <br>
+    ${title}
+  </td>
+  <td>${video_allow_dvr_flg}</td>
+  <td>${video_convert_to_vod_flg}</td>
+</tr>
 TABLE_ROW
           )"
           live_timestamp_code_row_map["${key}"]="${value}"
@@ -124,12 +124,12 @@ done < <(
 echo '<table>'
 
 cat <<'TABLE_HEADER'
-  <thead>
-    <th>START (UTC)</th>
-    <th>Thumbnail, URL & Title</th>
-    <th>allow_dvr_flg</th>
-    <th>convert_to_vod_flg</th>
-  </thead>
+<thead>
+  <th>START (UTC)</th>
+  <th>Thumbnail, URL & Title</th>
+  <th>allow_dvr_flg</th>
+  <th>convert_to_vod_flg</th>
+</thead>
 TABLE_HEADER
 
 for key in "${live_timestamp_code_array[@]}"; do
